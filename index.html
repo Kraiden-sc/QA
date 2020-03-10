@@ -34,12 +34,19 @@
 		<!-- Custom css --> 
 		<link href="css/custom.css" rel="stylesheet">
 		
-		<link rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon">
+		
 		
 	</head>
 
 	<body class="no-trans">
 		<!-- scrollToTop -->
+		  <div class="scrollar-scroll scrollar-vscroll">
+        <div class="scrollar-btn scrollar-btnup"></div>
+        <div class="scrollar-btn scrollar-btndown"></div>
+        <div class="scrollar-track scrollar-vtrack">
+            <div class="scrollar-thumb scrollar-vthumb"></div>
+        </div>
+    </div>
 		<!-- ================ -->
 		<div class="scrollToTop"><i class="icon-up-open-big"></i></div>
 
@@ -152,7 +159,7 @@
 						<li>С точки зрения ПО, <cite>веб-сервер</cite> включает в себя несколько компонентов, которые контролируют доступ веб-пользователей к размещенным на сервере файлам, как минимум — это&nbsp;<em><cite>HTTP-сервер</cite></em>. <cite>HTTP-сервер</cite>&nbsp;— это часть ПО, которая понимает <a class="glossaryLink" href="/ru/docs/Словарь/URL" title="URL’ы : Единый указатель ресурса (Uniform Resource Locator,&nbsp;URL) —&nbsp;строка, однозначно определяющая, где в интернете находится ресурс.">URL’ы </a> (веб-адреса) и <a class="glossaryLink" href="/ru/docs/%D0%A1%D0%BB%D0%BE%D0%B2%D0%B0%D1%80%D1%8C/HTTP" title="Определение термина «HTTP» ещё не написано; может быть, вы напишете?">HTTP</a> (протокол, который ваш браузер использует для просмотра веб-страниц).</li>
 						</ol>
 						<p>На самом базовом уровне, когда браузеру нужен файл, размещенный на веб-сервере, браузер запрашивает его через HTTP-протокол. Когда запрос достигает нужного веб-сервера ("железо"), сервер HTTP (ПО) принимает запрос, находит&nbsp;запрашиваемый документ (если нет, то сообщает об&nbsp;ошибке <a href="/ru/docs/Web/HTTP/Status/404">404</a>)&nbsp;и отправляет обратно, также через HTTP.</p>
-						<p><img alt="Basic representation of a client/server connection through HTTP" src="https://mdn.mozillademos.org/files/8659/web-server.svg" style="height: 200px; width: 600px;"></p>
+						<p><center><img alt="Basic representation of a client/server connection through HTTP" src="https://mdn.mozillademos.org/files/8659/web-server.svg" style="height: 200px; width: 600px;"></center></p>
 						<p><strong>Статический веб-сервер</strong>, или стек, состоит из компьютера ("железо") с сервером HTTP (ПО). Мы называем это <span style="background-color: #ffffff; color: #222222; display: inline !important; float: none; font-family: sans-serif; font-size: 14px; font-style: normal; font-weight: normal; letter-spacing: normal; text-align: start; text-decoration-style: initial; text-indent: 0px; text-transform: none; white-space: normal;">«</span>статикой<span style="background-color: #ffffff; color: #222222; display: inline !important; float: none; font-family: sans-serif; font-size: 14px; font-style: normal; font-weight: normal; letter-spacing: normal; text-align: start; text-decoration-style: initial; text-indent: 0px; text-transform: none; white-space: normal;">»</span>, потому что сервер посылает размещенные файлы в браузер <span style="background-color: #ffffff; color: #222222; display: inline !important; float: none; font-family: sans-serif; font-size: 14px; font-style: normal; font-weight: normal; letter-spacing: normal; text-align: start; text-decoration-style: initial; text-indent: 0px; text-transform: none; white-space: normal;">«</span>как есть<span style="background-color: #ffffff; color: #222222; display: inline !important; float: none; font-family: sans-serif; font-size: 14px; font-style: normal; font-weight: normal; letter-spacing: normal; text-align: start; text-decoration-style: initial; text-indent: 0px; text-transform: none; white-space: normal;">»</span>.</p>
 						<p><strong>Динамический веб-сервер</strong> состоит из статического веб-сервера и дополнительного программного обеспечения, чаще всего <em>сервера приложения </em>и <em>базы данных</em>. Мы называем его <span style="background-color: #ffffff; color: #222222; display: inline !important; float: none; font-family: sans-serif; font-size: 14px; font-style: normal; font-weight: normal; letter-spacing: normal; text-align: start; text-decoration-style: initial; text-indent: 0px; text-transform: none; white-space: normal;">«</span>динамическим<span style="background-color: #ffffff; color: #222222; display: inline !important; float: none; font-family: sans-serif; font-size: 14px; font-style: normal; font-weight: normal; letter-spacing: normal; text-align: start; text-decoration-style: initial; text-indent: 0px; text-transform: none; white-space: normal;">»</span>, потому что сервер приложений изменяет исходные файлы перед отправкой в ваш браузер по HTTP.</p>
 						<p>Например, для получения итоговой страницы, которую вы просматриваете в браузере, сервер приложений может заполнить HTML-шаблон данными из базы данных. Такие сайты, как MDN или Википедия, состоят из тысяч веб-страниц, но они не являются реальными HTML документами —&nbsp;лишь несколько HTML-шаблонов и гигантские базы данных. Эта структура упрощает и ускоряет сопровождение веб-приложений и доставку контента.</p>				
