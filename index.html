@@ -154,9 +154,6 @@
 		event.preventDefault();
 
 		const { loanAmount, email } = form;
-
-		spixelPublicAPI.push(["formSubmitAttempt", "#omForm"]);
-
 		sendDataToApi("/my-form-api", {
 		loanAmount: loanAmount.value,
 		email: email.value,
