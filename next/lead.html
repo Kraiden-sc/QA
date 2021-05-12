@@ -49,11 +49,9 @@
             incomeNextDate2: incomeNextDate2.value,
             })
             .done(function(response) {
-            // Server has responded saying the submit was successful!
             spixelPublicAPI.formSubmitSuccess('#omForm');
             })
             .fail(function(response) {
-            // Response says the submit failed.
             spixelPublicAPI.formSubmitFailure('#omForm');
             });
             });
