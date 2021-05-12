@@ -158,7 +158,7 @@
 		window._mfq.push(["formSubmitAttempt", "#checkout-form"]);
 
 		sendDataToApi("/my-form-api", {
-		firstName: loanAmount.value,
+		loanAmount: loanAmount.value,
 		email: email.value,
 		})
 		.done(function(response) {
