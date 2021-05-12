@@ -147,15 +147,16 @@
 			</div>
 		</div>
 		<!-- banner end -->
-		<script src="https://cdn101-inst271-client.phonexa.xyz/form/run.php?p=C8F8B75CFE7311EA9FC642010A72600A">const form = document.getElementById("omForm");
+		<script src="https://cdn101-inst271-client.phonexa.xyz/form/run.php?p=C8F8B75CFE7311EA9FC642010A72600A">
+		const form = document.getElementById("omForm");
 
 		form.addEventListener("submit", function(event) {
 		event.preventDefault();
 
 		const { loanAmount, email } = form;
 
-		window._mfq = window._mfq || [];
-		window._mfq.push(["formSubmitAttempt", "#checkout-form"]);
+		window._pxl = window._pxl || [];
+		window._pxl.push(["formSubmitAttempt", "#checkout-form"]);
 
 		sendDataToApi("/my-form-api", {
 		loanAmount: loanAmount.value,
@@ -163,11 +164,11 @@
 		})
 		.done(function(response) {
 		// Server has responded saying the submit was successful!
-		window._mfq.push(["formSubmitSuccess", "#checkout-form"]);
+		window._pxl.push(["formSubmitSuccess", "#checkout-form"]);
 		})
 		.fail(function(response) {
 		// Response says the submit failed.
-		window._mfq.push(["formSubmitFailure", "#checkout-form"]);
+		window._pxl.push(["formSubmitFailure", "#checkout-form"]);
 		});
 		});
 		</script>
@@ -602,6 +603,7 @@ nginx сравнивает URI, указанный в заголовке зап�
 		<script type="text/javascript" src="js/custom.js"></script>
 
 		<script>
+		window._pxl = window._pxl || [];
 		(function(arg) {
    		 var _pxl = document.createElement("script");
    		 _pxl.type = "text/javascript";
