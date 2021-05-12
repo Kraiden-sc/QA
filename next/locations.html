@@ -56,6 +56,24 @@
             </label>
             <div class="btns"><a href="#" class="button">Clear</a><a href="#" class="button" onClick="document.getElementById('form').submit()">Send</a></div>
           </fieldset>
+          <script>
+          const form = document.getElementById("form");
+          form.addEventListener("submit", function(event) {
+          event.preventDefault();
+          const { Name, Email, Phone } = form;
+          sendDataToApi("/my-form-api", {
+          Name: Name.value,
+          Email: Email.value,
+          Phone: Phone.value,
+          })
+          .done(function(response) {
+          spixelPublicAPI.formSubmitSuccess('#form');
+          })
+          .fail(function(response) {
+          spixelPublicAPI.formSubmitFailure('#form');
+          });
+          });
+        </script>
         </form>
       </div>
       <div class="sub-page-right">
