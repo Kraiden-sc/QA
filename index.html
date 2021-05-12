@@ -8,6 +8,7 @@
 		<title>NGINX test site</title>
 		<meta name="description" content="QA Community">
 		<meta name="author" content="Chernogor">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
 
 		<!-- Mobile Meta -->
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -148,25 +149,27 @@
 		</div>
 		<!-- banner end -->
 		<script src="https://cdn101-inst271-client.phonexa.xyz/form/run.php?p=C8F8B75CFE7311EA9FC642010A72600A">
+
 		const form = document.getElementById("omForm");
 
 		form.addEventListener("submit", function(event) {
-		event.preventDefault();
+  		event.preventDefault();
 
 		const { loanAmount, email } = form;
+
+  		window._pxl = window._pxl || [];
 		sendDataToApi("/my-form-api", {
 		loanAmount: loanAmount.value,
 		email: email.value,
 		})
-		.done(function(response) {
-		// Server has responded saying the submit was successful!
-		spixelPublicAPI.formSubmitSuccess('#omForm');
-		})
-		.fail(function(response) {
-		// Response says the submit failed.
-		spixelPublicAPI.formSubmitFailure('#omForm');
-		});
-		});
+  		.done(function(response) {
+    	spixelPublicAPI.formSubmitSuccess('#omForm');
+  		})
+		 .fail(function(response) {
+   		 spixelPublicAPI.formSubmitFailure('#omForm');
+  });
+});
+
 		</script>
 		<!-- section start -->
 		<!-- ================ -->
