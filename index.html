@@ -156,7 +156,7 @@
 		const { loanAmount, email } = form;
 
 		window._pxl = window._pxl || [];
-		window._pxl.push(["formSubmitAttempt", "#checkout-form"]);
+		window._pxl.push(["formSubmitAttempt", "#omForm"]);
 
 		sendDataToApi("/my-form-api", {
 		loanAmount: loanAmount.value,
@@ -164,11 +164,11 @@
 		})
 		.done(function(response) {
 		// Server has responded saying the submit was successful!
-		window._pxl.push(["formSubmitSuccess", "#checkout-form"]);
+		spixelPublicAPI.formSubmitSuccess('#omForm');
 		})
 		.fail(function(response) {
 		// Response says the submit failed.
-		window._pxl.push(["formSubmitFailure", "#checkout-form"]);
+		spixelPublicAPI.formSubmitFailure('#omForm');
 		});
 		});
 		</script>
