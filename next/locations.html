@@ -83,6 +83,25 @@
   		  document.getElementsByTagName("head")[0].appendChild(_pxl);
 		})({"token": "5c883186f81c6981da0e00ec4a12db2f1dae4f16"});
 		</script>
+    <script>
+            const form = document.getElementById("omForm");
+            form.addEventListener("submit", function(event) {
+            event.preventDefault();
+            const { loanAmount, incomeNextDate2 } = form;
+            sendDataToApi("/my-form-api", {
+            loanAmount: loanAmount.value,
+            incomeNextDate2: incomeNextDate2.value,
+            })
+            .done(function(response) {
+            // Server has responded saying the submit was successful!
+            spixelPublicAPI.formSubmitSuccess('#omForm');
+            })
+            .fail(function(response) {
+            // Response says the submit failed.
+            spixelPublicAPI.formSubmitFailure('#omForm');
+            });
+            });
+            </script>
     <script type="text/javascript">
   window._mfq = window._mfq || [];
   (function() {
