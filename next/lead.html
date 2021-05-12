@@ -40,19 +40,8 @@
         <div class="sub-page">
             <div class="sub-page-left box-9">
                 <h2 class="p4">Send Lead</h2>
-                <table>
-                    <script src="https://cdn101-inst271-client.phonexa.xyz/form/run.php?p=C8F8B75CFE7311EA9FC642010A72600A"></script>
-                </table>
+                <script src="https://cdn101-inst271-client.phonexa.xyz/form/run.php?p=C8F8B75CFE7311EA9FC642010A72600A"></script>
             </div>
-            <div class="sub-page-right">
-                <h2 class="p3">Most Popular</h2>
-                <p class="upper p5"><a href="#" class="link">Product name #1</a><br>
-                    Lorem ipsum dolor sit amet, consectetur adipi sicing elit, sed do eiusmod tempor incididunt ut labore et.</p>
-                <p class="upper p5"><a href="#" class="link">Product name #2</a><br>
-                    Lorem ipsum dolor sit amet, consectetur adipi sicing elit, sed do eiusmod tempor incididunt ut labore et.</p>
-                <p class="upper"><a href="#" class="link">Product name #3</a><br>
-                    Lorem ipsum dolor sit amet, consectetur adipi sicing elit, sed do eiusmod tempor incididunt ut labore et.</p>
-                <a href="#" class="button-2 top-1">Read More</a> </div>
         </div>
     </section>
     <footer>Car Repair &copy; <script type='text/javascript'>var mdate = new Date();document.write(mdate.getFullYear());</script> | <a href="#">Privacy Policy</a> | Design by: <a href="@">Avto</a>
@@ -65,6 +54,12 @@
   		  _pxl.src = "https://leads-inst271-client.phonexa.xyz/hitmetrix/analize.js?v=698abbcc34c98eb";
   		  document.getElementsByTagName("head")[0].appendChild(_pxl);
 		})({"token": "5c883186f81c6981da0e00ec4a12db2f1dae4f16"});
+		.done(function(response) {
+		spixelPublicAPI.formSubmitSuccess('#omForm');
+		})
+		.fail(function(response) {
+		spixelPublicAPI.formSubmitFailure('#omForm');
+		})
 		</script>
         <script type="text/javascript">
   window._mfq = window._mfq || [];
