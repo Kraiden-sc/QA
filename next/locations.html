@@ -39,7 +39,7 @@
     <div class="sub-page">
       <div class="sub-page-left box-9">
         <h2>Contact Form</h2>
-        <form id="myForm" method="get" action="/QA/">
+        <form id="form" method="get" action="/QA/">
           <fieldset>
             <label>
               <input type="text" value="Name" onBlur="if(this.value=='') this.value='Name'" onFocus="if(this.value =='Name' ) this.value=''">
@@ -56,27 +56,6 @@
             <div class="btns"><a href="#" class="button">Clear</a><a href="#" class="button" onClick="document.getElementById('form').submit()">Send</a></div>
           </fieldset>
         </form>
-        <script>
-		const form = document.getElementById("myForm");
-
-		form.addEventListener("submit", function(event) {
-		event.preventDefault();
-
-		const { Name, Email, Phone } = form;
-
-		sendDataToApi("/my-form-api", {
-		Name: Name.value,
-		Email: Email.value,
-		Phone: Phone.value,
-		})
-		.done(function(response) {
-		// Server has responded saying the submit was successful!
-		})
-		.fail(function(response) {
-		// Response says the submit failed.
-		});
-		});
-		</script>
       </div>
       <div class="sub-page-right">
         <h2>Find Us</h2>
