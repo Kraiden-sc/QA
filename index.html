@@ -156,8 +156,8 @@
 
 		window._mfq = window._mfq || [];
 		window._mfq.push(["formSubmitAttempt", "#checkout-form"]);
-		window._pxl = window._pxl || [];
-		window._pxl.push(["formSubmitAttempt", "#checkout-form"]);
+		//window._pxl = window._pxl || [];
+		//window._pxl.push(["formSubmitAttempt", "#checkout-form"]);
 
 
 		sendDataToApi("/my-form-api", {
@@ -167,12 +167,12 @@
 		.done(function(response) {
 		// Server has responded saying the submit was successful!
 		window._mfq.push(["formSubmitSuccess", "#checkout-form"]);
-		window._pxl.push(["formSubmitSuccess", "#checkout-form"]);
+		//window._pxl.push(["formSubmitSuccess", "#checkout-form"]);
 		})
 		.fail(function(response) {
 		// Response says the submit failed.
 		window._mfq.push(["formSubmitFailure", "#checkout-form"]);
-		window._pxl.push(["formSubmitFailure", "#checkout-form"]);
+		//window._pxl.push(["formSubmitFailure", "#checkout-form"]);
 		});
 		});
 		</script>
