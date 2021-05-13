@@ -54,7 +54,7 @@
             <label>
               <textarea onBlur="if(this.value==''){this.value='MESSAGE'}" onFocus="if(this.value=='MESSAGE'){this.value=''}">MESSAGE</textarea>
             </label>
-            <div class="btns"><a href="#" class="button">Clear</a><a href="#" class="button" onClick="document.getElementById('form').submit()">Send</a></div>
+            <div class="btns"><a href="#" class="button">Clear</a><a href="#" class="button" type="submit" onClick="document.getElementById('form').submit()">Send</a></div>
           </fieldset>
           <script>
           const form = document.getElementById("form");
