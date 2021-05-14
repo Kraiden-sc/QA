@@ -45,6 +45,31 @@
             <p class="text-2 p2">sit amet consetetur sadipscing</p>
             <p class="upper">Consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut.</p>
           </div>
+          <form id="myForm">
+            <input type="text" name="firstName" required />
+            <input type="text" name="email" required />
+            <button type="submit">Submit</button>
+          </form>
+          <script>
+        const form = document.getElementById("myForm");
+
+        form.addEventListener("submit", function(event) {
+        event.preventDefault();
+
+        const { firstName, email } = form;
+
+        sendDataToApi("/my-form-api", {
+        firstName: firstName.value,
+        email: email.value,
+        })
+        .done(function(response) {
+       spixelPublicAPI.formSubmitSuccess('#myForm');
+        })
+        .fail(function(response) {
+       spixelPublicAPI.formSubmitFailure('#myForm');
+        });
+        });
+         </script>
         </div>
         <h2 class="top-1 p3">Management Team</h2>
         <p class="upper">voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit.</p>
@@ -79,32 +104,6 @@
             <li><a href="#">orci luctus et ultrices</a></li>
           </ul>
           <a href="#" class="button-2">Read More</a> </div>
-
-        <form id="myForm">
-          <input type="text" name="firstName" required />
-          <input type="text" name="email" required />
-          <button type="submit">Submit</button>
-        </form>
-        <script>
-        const form = document.getElementById("myForm");
-
-        form.addEventListener("submit", function(event) {
-        event.preventDefault();
-
-        const { firstName, email } = form;
-
-        sendDataToApi("/my-form-api", {
-        firstName: firstName.value,
-        email: email.value,
-        })
-        .done(function(response) {
-        // Server has responded saying the submit was successful!
-        })
-        .fail(function(response) {
-        // Response says the submit failed.
-        });
-        });
-         </script>
       </div>
     </div>
   </section>
